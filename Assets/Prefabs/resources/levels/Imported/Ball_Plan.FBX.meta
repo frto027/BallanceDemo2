@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: fc1170d38c9c1e24abbe559c59f04f0f
+timeCreated: 1467116074
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: P_Ball_Paper_MF
+    100004: P_Ball_Stone_MF
+    100006: P_Ball_Wood_MF
+    100008: P_Modul_03_Floor
+    100010: P_Modul_03_Gate
+    100012: P_Modul_03_Wall01
+    100014: P_Modul_03_Wall02
+    100016: P_Modul_03_Wall03
+    100018: P_Modul_03_Wall04
+    100020: P_Modul_03_Wall05
+    100022: P_Modul_03_Wall06
+    100024: P_Modul_03_Wall07
+    400000: //RootNode
+    400002: P_Ball_Paper_MF
+    400004: P_Ball_Stone_MF
+    400006: P_Ball_Wood_MF
+    400008: P_Modul_03_Floor
+    400010: P_Modul_03_Gate
+    400012: P_Modul_03_Wall01
+    400014: P_Modul_03_Wall02
+    400016: P_Modul_03_Wall03
+    400018: P_Modul_03_Wall04
+    400020: P_Modul_03_Wall05
+    400022: P_Modul_03_Wall06
+    400024: P_Modul_03_Wall07
+    2300000: P_Ball_Paper_MF
+    2300002: P_Ball_Stone_MF
+    2300004: P_Ball_Wood_MF
+    2300006: P_Modul_03_Floor
+    2300008: P_Modul_03_Gate
+    2300010: P_Modul_03_Wall01
+    2300012: P_Modul_03_Wall02
+    2300014: P_Modul_03_Wall03
+    2300016: P_Modul_03_Wall04
+    2300018: P_Modul_03_Wall05
+    2300020: P_Modul_03_Wall06
+    2300022: P_Modul_03_Wall07
+    3300000: P_Ball_Paper_MF
+    3300002: P_Ball_Stone_MF
+    3300004: P_Ball_Wood_MF
+    3300006: P_Modul_03_Floor
+    3300008: P_Modul_03_Gate
+    3300010: P_Modul_03_Wall01
+    3300012: P_Modul_03_Wall02
+    3300014: P_Modul_03_Wall03
+    3300016: P_Modul_03_Wall04
+    3300018: P_Modul_03_Wall05
+    3300020: P_Modul_03_Wall06
+    3300022: P_Modul_03_Wall07
+    4300000: P_Ball_Paper_MF
+    4300002: P_Ball_Stone_MF
+    4300004: P_Ball_Wood_MF
+    4300006: P_Modul_03_Floor
+    4300008: P_Modul_03_Wall07
+    4300010: P_Modul_03_Wall06
+    4300012: P_Modul_03_Wall05
+    4300014: P_Modul_03_Wall04
+    4300016: P_Modul_03_Wall03
+    4300018: P_Modul_03_Wall02
+    4300020: P_Modul_03_Wall01
+    4300022: P_Modul_03_Gate
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
