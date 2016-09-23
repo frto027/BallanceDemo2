@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 7412334c319c63d4bb5b73ee72fce7ef
+timeCreated: 1474505700
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: P_Modul_37_Bridge
+    100004: P_Modul_37_Bridge1
+    100006: P_Modul_37_Bridge10
+    100008: P_Modul_37_Bridge11
+    100010: P_Modul_37_Bridge2
+    100012: P_Modul_37_Bridge3
+    100014: P_Modul_37_Bridge4
+    100016: P_Modul_37_Bridge5
+    100018: P_Modul_37_Bridge6
+    100020: P_Modul_37_Bridge7
+    100022: P_Modul_37_Bridge8
+    100024: P_Modul_37_Bridge9
+    100026: P_Modul_37_Bridge_s1
+    100028: P_Modul_37_Bridge_s2
+    100030: P_Modul_37_Hinge
+    100032: P_Modul_37_Hinge1
+    100034: P_Modul_37_Hinge2
+    100036: P_Modul_37_Hinge3
+    100038: P_Modul_37_Hinge4
+    100040: P_Modul_37_Hinge5
+    400000: //RootNode
+    400002: P_Modul_37_Bridge
+    400004: P_Modul_37_Bridge1
+    400006: P_Modul_37_Bridge10
+    400008: P_Modul_37_Bridge11
+    400010: P_Modul_37_Bridge2
+    400012: P_Modul_37_Bridge3
+    400014: P_Modul_37_Bridge4
+    400016: P_Modul_37_Bridge5
+    400018: P_Modul_37_Bridge6
+    400020: P_Modul_37_Bridge7
+    400022: P_Modul_37_Bridge8
+    400024: P_Modul_37_Bridge9
+    400026: P_Modul_37_Bridge_s1
+    400028: P_Modul_37_Bridge_s2
+    400030: P_Modul_37_Hinge
+    400032: P_Modul_37_Hinge1
+    400034: P_Modul_37_Hinge2
+    400036: P_Modul_37_Hinge3
+    400038: P_Modul_37_Hinge4
+    400040: P_Modul_37_Hinge5
+    2300000: P_Modul_37_Bridge
+    2300002: P_Modul_37_Bridge1
+    2300004: P_Modul_37_Bridge10
+    2300006: P_Modul_37_Bridge11
+    2300008: P_Modul_37_Bridge2
+    2300010: P_Modul_37_Bridge3
+    2300012: P_Modul_37_Bridge4
+    2300014: P_Modul_37_Bridge5
+    2300016: P_Modul_37_Bridge6
+    2300018: P_Modul_37_Bridge7
+    2300020: P_Modul_37_Bridge8
+    2300022: P_Modul_37_Bridge9
+    2300024: P_Modul_37_Bridge_s1
+    2300026: P_Modul_37_Bridge_s2
+    2300028: P_Modul_37_Hinge
+    2300030: P_Modul_37_Hinge1
+    2300032: P_Modul_37_Hinge2
+    2300034: P_Modul_37_Hinge3
+    2300036: P_Modul_37_Hinge4
+    2300038: P_Modul_37_Hinge5
+    3300000: P_Modul_37_Bridge
+    3300002: P_Modul_37_Bridge1
+    3300004: P_Modul_37_Bridge10
+    3300006: P_Modul_37_Bridge11
+    3300008: P_Modul_37_Bridge2
+    3300010: P_Modul_37_Bridge3
+    3300012: P_Modul_37_Bridge4
+    3300014: P_Modul_37_Bridge5
+    3300016: P_Modul_37_Bridge6
+    3300018: P_Modul_37_Bridge7
+    3300020: P_Modul_37_Bridge8
+    3300022: P_Modul_37_Bridge9
+    3300024: P_Modul_37_Bridge_s1
+    3300026: P_Modul_37_Bridge_s2
+    3300028: P_Modul_37_Hinge
+    3300030: P_Modul_37_Hinge1
+    3300032: P_Modul_37_Hinge2
+    3300034: P_Modul_37_Hinge3
+    3300036: P_Modul_37_Hinge4
+    3300038: P_Modul_37_Hinge5
+    4300000: P_Modul_37_Bridge
+    4300002: P_Modul_37_Hinge
+    4300004: P_Modul_37_Hinge1
+    4300006: P_Modul_37_Hinge2
+    4300008: P_Modul_37_Hinge3
+    4300010: P_Modul_37_Hinge4
+    4300012: P_Modul_37_Hinge5
+    4300014: P_Modul_37_Bridge_s1
+    4300016: P_Modul_37_Bridge2
+    4300018: P_Modul_37_Bridge3
+    4300020: P_Modul_37_Bridge4
+    4300022: P_Modul_37_Bridge5
+    4300024: P_Modul_37_Bridge6
+    4300026: P_Modul_37_Bridge7
+    4300028: P_Modul_37_Bridge8
+    4300030: P_Modul_37_Bridge9
+    4300032: P_Modul_37_Bridge10
+    4300034: P_Modul_37_Bridge11
+    4300036: P_Modul_37_Bridge_s2
+    4300038: P_Modul_37_Bridge1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
