@@ -33,6 +33,12 @@ public class F_Object : MonoBehaviour
         foreach (F_Object fo in F_Objects)
             fo.Pause(isPause);
     }
+    static public void SwitchSectorAll()
+    {
+        //通知小节组变更
+        foreach (F_Object fo in F_Objects)
+            fo.SwitchSector();
+    }
 
     public virtual void Start()
     {
@@ -62,5 +68,9 @@ public class F_Object : MonoBehaviour
     virtual public void Pause(bool isPause)
     {
         //true为需要暂停
+    }
+    virtual public void SwitchSector()
+    {
+        //切换小节组，levelManager.CurrentLevel
     }
 }

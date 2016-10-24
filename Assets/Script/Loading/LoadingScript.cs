@@ -2,7 +2,9 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// 此处修改关卡说明信息
+/// </summary>
 class DeviceType
 {
     public enum Type { KeyBoard ,TouchScreen,Joystick};
@@ -23,7 +25,7 @@ public class LoadingScript : MonoBehaviour {
         {
             case 1:
                 NameText.text = "Level 1";
-                InfoText.text = "Testing...";
+                InfoText.text = "Hello, world";
                 break;
             default:
                 NameText.text = "关卡" + LevelCount.ToString();
@@ -32,6 +34,8 @@ public class LoadingScript : MonoBehaviour {
         }
         scoreSaver = new ScoreSaver(Application.persistentDataPath + "/gamesave");
         TipText.text = "点击屏幕/键盘<i>" + KeyName.GetKeyName(scoreSaver.Key_OverView) + "</i>(俯视)/手柄(<i>A</i>)继续";
+        //这里清空几个静态类对象
+
         //然后异步加载场景
         StartCoroutine(MyLoad(LevelName));
 	}

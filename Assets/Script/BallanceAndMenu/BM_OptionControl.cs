@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BM_OptionControl : ButtonsMenu {
     public GameObject OptionKeyBoard;
+    public GameObject OptionTouchBoard;
     public GameObject OptionJoystick;
     public override void OnButtinClicked(int ButtinId)
     {
@@ -11,6 +12,9 @@ public class BM_OptionControl : ButtonsMenu {
         {
             case 0:
                 GoToMenu(OptionKeyBoard);
+                break;
+            case 1:
+                GoToMenu(OptionTouchBoard);
                 break;
             case 2:
                 GoToMenu(OptionJoystick);

@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
     public int ExtraLife = 3;
     public float Score = 1000f;
 
+    public string [] JoystickResPath;//移动端控制插件的prefabs路径，根据类型动态加载
     public Vector3 RebirthPosition;//死亡后重生位置
 
     public Transform CameraAim;
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
     public F_Camera theCamera;
     private Transform theCameraT;
 
+    public GameObject GameUI;
     public GameObject PauseMenu;
     public GameObject DeathMenu;
 
@@ -45,20 +47,26 @@ public class LevelManager : MonoBehaviour
 
     public int CurrentLevel;//readonly 0 - 12
 
+    public int CurrentSector;//First is 1
+
+    public bool DebugBool = false;
     //几个公用音频资源
     public AudioSource BallScrollAudio_Floor;//滚球声音
     public AudioSource BallScrollAudio_Wood;//滚球声音
     public AudioSource BallScrollAudio_Rail;//滚球声音
     public AudioSource BallCrashAudio;//击球声音
+    public AudioSource WoodFlapAudio;//木板拍击
 
     public AudioSource ChangeBallAudio;//变球器声音
     public AudioSource BackGroundMusicAudio;//BGM
 
+   
 
+    public bool ShowGameUI = true;
     public void LevelEnd()
     {
         //通关了
-        if (LevelEnded||DeathBigin)
+        if (LevelEnded || DeathBigin)
             return;
         if (isPause)
             Pause(false);
@@ -75,12 +83,12 @@ public class LevelManager : MonoBehaviour
     /*死亡相关*/
     public void Death()
     {
-        if (DeathBigin||birthing)
+        if (DeathBigin || birthing)
             return;
         DeathBigin = true;
         DeathAfter = false;
 
-        if(ExtraLife <= 0)
+        if (ExtraLife <= 0)
         {
             theCamera.CameraPositionS1 = theCamera.CameraPositionS2 = theCamera.CameraPositionS3 = 0;
             DeathMenu.SetActive(true);
@@ -91,7 +99,7 @@ public class LevelManager : MonoBehaviour
         }
         ExtraLife--;
         DeathAnimi.SetBool("Deathing", true);
-        
+
         //此处死亡动画，白色笼罩，回调DeathReset
     }
     public void DeathReset()
@@ -122,7 +130,7 @@ public class LevelManager : MonoBehaviour
     /*暂停相关*/
     public void Pause(bool _isPause)
     {
-        if (DeathBigin||changingBall)
+        if (DeathBigin || changingBall)
             return;
         if (isPause == _isPause)
             return;
@@ -135,6 +143,7 @@ public class LevelManager : MonoBehaviour
     /* over 暂停相关*/
     /*虚拟键盘接口相关*/
     /*
+     * 在JoystickResPath中注册你的虚拟键盘插件路径，数组下标即菜单对应的buttonID，确保能够在游戏开始时正常加载
      * 注意，虚拟键盘也应该是F_Object
      * 在收到Pause的消息时需要隐藏
      * 在收到Pause false消息时显示
@@ -142,7 +151,7 @@ public class LevelManager : MonoBehaviour
      * 如果是虚拟键盘，JoyListener实例的检测功能将在LevelManager中被销毁，
      * JoyListener中
      * L 方向键，是个二维向量，其中x控制球相对世界坐标x方向上的力
-     * 旋转视角请在Update中将LeftR,RightR单帧置为1，LevelManager将在LateUpdate中处理
+     * 旋转视角请在Update中将LeftR,RightR单帧置为1，LevelManager将在--LateUpdate-->fixedUpdate中处理
      * 视角抬高，请将JoyListener中的OverView置为1
      * 你可以制作你自己的虚拟键盘，包括对球施加力度的大小都是可控制的，输入方式也不一定是屏幕输入
     /* over 虚拟键盘相关*/
@@ -152,22 +161,50 @@ public class LevelManager : MonoBehaviour
     {
         DeathBigin = false;
         //初始化CurrentLevel
-        CurrentLevel = PlayerPrefs.GetInt("LoadLevelINT",1) - 1;
+        CurrentLevel = PlayerPrefs.GetInt("LoadLevelINT", 1) - 1;
         //若不是手柄，则禁用手柄监听器
         if (((deviceType = (PlayerPrefs.GetInt("DeviceType"))) != (int)DeviceType.Type.Joystick) && joyListener != null)
         {
             joyListener.Start();//初始化静态变量
             Destroy(joyListener);
         }
-        scoreSaver = new ScoreSaver(Application.persistentDataPath+"/gamesave");
+        scoreSaver = new ScoreSaver(Application.persistentDataPath + "/gamesave");
         if (CameraAim == null)
             CameraAim = Player.GetComponent<Transform>();
         CameraDirectionAnimator = CameraDirection.GetComponent<Animator>();
         theCameraT = theCamera.GetComponent<Transform>();
+
+        //显示DeathAnim
+        DeathAnimi.gameObject.SetActive(true);
+        if (ShowGameUI)
+            GameUI.SetActive(true);
+
+        //加载移动端控制插件
+        if (deviceType == (int)DeviceType.Type.TouchScreen)
+        {
+            int JoyType = PlayerPrefs.GetInt("TouchKeyboardId", 0);
+            if(JoystickResPath.Length > JoyType)
+            {
+                Instantiate(Resources.Load(JoystickResPath[JoyType]));
+            }
+        }
     }
 
     public void LateUpdate()
     {
+        
+    }
+
+    public void FixedUpdate()
+    {
+        /*debug only*/
+        if (DebugBool)
+        {
+            DebugBool = false;
+            NextSector();
+        }
+
+        /**from late update****/
         if (!isPause /* && !birthing*/)
         {
             if (!theCamera.FreeCameraPosition && !theCamera.FreeCameraAim)
@@ -201,10 +238,8 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
-    }
 
-    public void FixedUpdate()
-    {
+        /******/
         //死亡后执行ResetUpdate，回调AfterDeathReset
         if (DeathBigin && DeathAfter)
         {
@@ -214,12 +249,12 @@ public class LevelManager : MonoBehaviour
                 AfterDeathReset();
         }
         //按Esc或手柄Start开启暂停菜单
-        if (!isPause &&!LevelEnded && !birthing && (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")))
+        if (!isPause && !LevelEnded && !birthing && (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")))
         {
             Pause(true);
         }
 
-        if (!isPause &&!birthing &&!LevelEnded)
+        if (!isPause && !birthing && !LevelEnded)
         {
             if (Score > 0)
                 Score -= 2 * Time.deltaTime;
@@ -247,8 +282,19 @@ public class LevelManager : MonoBehaviour
                 if (Input.GetKey(scoreSaver.Key_OverView) || Input.GetButton("A") || Input.GetButton("R"))
                     theCamera.CameraSoftMove.y += 10;//上方有对y的控制，这里不宜直接修改
             }
+            //屏幕键盘抬高视野
+            else if(deviceType == (int)DeviceType.Type.TouchScreen && JoyListener.OverView)
+            {
+                theCamera.CameraSoftMove.y += 10;
+            }
         }
 
+    }
+
+    public void NextSector()
+    {
+        ++CurrentSector;
+        F_Object.SwitchSectorAll();
     }
 
 }
