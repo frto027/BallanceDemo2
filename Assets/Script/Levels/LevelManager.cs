@@ -55,10 +55,13 @@ public class LevelManager : MonoBehaviour
     public AudioSource BallScrollAudio_Wood;//滚球声音
     public AudioSource BallScrollAudio_Rail;//滚球声音
     public AudioSource BallCrashAudio;//击球声音
+    public AudioSource BallCrashAudio_Floor, BallCrashAudio_Wood, BallCrashAudio_Rail;
     public AudioSource WoodFlapAudio;//木板拍击
 
     public AudioSource ChangeBallAudio;//变球器声音
     public AudioSource BackGroundMusicAudio;//BGM
+    public AudioSource SectorEndDongAudio;//存盘声音
+    public AudioSource LevelEndBGMAudio;//靠近飞船声音
 
    
 

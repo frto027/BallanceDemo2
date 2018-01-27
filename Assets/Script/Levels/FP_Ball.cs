@@ -79,11 +79,11 @@ public class FP_Ball : F_Player
         tempM = tempM > MaxVolumeSpeed ? 1 : tempM / MaxVolumeSpeed;
         //levelManager.BallCrashAudio.volume = tempM;
         if (acm.BallCrash_Floor)
-            levelManager.BallCrashAudio.PlayOneShot(BallCrashAudioClip_Floor, tempM);
+            levelManager.BallCrashAudio_Floor.PlayOneShot(BallCrashAudioClip_Floor, tempM);
         else if (acm.BallCrash_Rail)
-            levelManager.BallCrashAudio.PlayOneShot(BallCrashAudioClip_Rail, tempM);
+            levelManager.BallCrashAudio_Rail.PlayOneShot(BallCrashAudioClip_Rail, tempM);
         else if (acm.BallCrash_Wood)
-            levelManager.BallCrashAudio.PlayOneShot(BallCrashAudioClip_Wood, tempM);
+            levelManager.BallCrashAudio_Wood.PlayOneShot(BallCrashAudioClip_Wood, tempM);
     }
 
     public void OnCollisionStay(Collision collision)
@@ -96,11 +96,20 @@ public class FP_Ball : F_Player
         float tempM = (theRigidBody.velocity - (tOtherRigid == null ? Vector3.zero : tOtherRigid.velocity)).magnitude;
         tempM = tempM > MaxVolumeSpeed ? 1 : tempM / MaxVolumeSpeed;
         if (acm.BallScroll_Floor)
+        {
             levelManager.BallScrollAudio_Floor.volume = tempM;
+
+        }
         if (acm.BallScroll_Wood)
+        {
             levelManager.BallScrollAudio_Wood.volume = tempM;
+
+        }
         if (acm.BallScroll_Rail)
+        {
             levelManager.BallScrollAudio_Rail.volume = tempM;
+
+        }
     }
 
     public void OnCollisionExit(Collision collision)

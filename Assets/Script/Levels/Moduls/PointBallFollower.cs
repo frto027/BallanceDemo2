@@ -40,7 +40,8 @@ public class PointBallFollower : F_Object
             levelManager.Score += 200;
             //销毁动画
             GetComponent<Collider>().enabled = false;//disable colider
-            GetComponent<ParticleSystem>().maxParticles = 0;//disable ball
+            //GetComponent<ParticleSystem>().maxParticles = 0;//disable ball
+            Destroy(GetComponent<ParticleSystem>());
             if (crashBallPaiticle != null)
             {
                 Transform cbTrans = crashBallPaiticle.GetComponent<Transform>();
@@ -91,10 +92,18 @@ public class PointBallFollower : F_Object
                 break;
         }
     }
-
+    public override void Reset()
+    {
+        base.Reset();
+        if(FollowBall != 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     public void BallCome()
     {
         FollowBall = 1;
     }
+    
 
 }
